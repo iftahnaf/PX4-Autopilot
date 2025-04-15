@@ -47,9 +47,9 @@ else()
 	message(FATAL_ERROR "is not a git repository")
 endif()
 
-# if(NOT IS_DIRECTORY "${git_dir_path}")
-# 	message(FATAL_ERROR "${git_dir_path} is not a directory")
-# endif()
+if(NOT IS_DIRECTORY "${git_dir_path}")
+	message(FATAL_ERROR "${git_dir_path} is not a directory")
+endif()
 
 set(px4_git_ver_header ${CMAKE_CURRENT_BINARY_DIR}/build_git_version.h)
 add_custom_command(OUTPUT ${px4_git_ver_header}
